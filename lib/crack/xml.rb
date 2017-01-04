@@ -89,10 +89,6 @@ class REXMLUtilityNode #:nodoc:
 
     if @text
       t = typecast_value( unnormalize_xml_entities( inner_html ) )
-      if t.is_a?(String)
-        t = REXMLUtiliyNodeString.new(t)
-        t.attributes = attributes
-      end
       return { name => t }
     else
       #change repeating groups into an array
